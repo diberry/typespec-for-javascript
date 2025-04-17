@@ -1,0 +1,28 @@
+{
+  "scripts":{
+    "tsp:compile": "npm run tsp:compile --workspaces"
+  },
+  "dependencies": {
+    "@azure-tools/typespec-autorest": "^0.54.0",
+    "@azure-tools/typespec-azure-core": "^0.54.0",
+    "@azure-tools/typespec-azure-resource-manager": "^0.54.0",
+    "@azure-tools/typespec-client-generator-core": "^0.54.0",
+    "@typespec/compiler": "^1.0.0-0",
+    "@typespec/http": "^1.0.0-0",
+    "@typespec/http-client-csharp": "^1.0.0-alpha.20250403.1",
+    "@typespec/http-client-java": "^0.3.0",    
+    "@typespec/http-client-js": "^0.3.0",
+    "@typespec/http-client-python": "^0.9.1",
+    "@typespec/http-server-csharp": "^0.58.0-alpha.13",
+    "@typespec/http-server-js": "0.58.0-alpha.12",
+    "@typespec/json-schema": "^1.0.0-0",
+    "@typespec/openapi": "^1.0.0-0",
+    "@typespec/openapi3": "^1.0.0-0",
+    "@typespec/rest": "^0.68.0",
+    "@typespec/streams": "^0.68.0",
+    "@typespec/versioning": "^0.68.0"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}

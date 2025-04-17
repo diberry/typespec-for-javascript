@@ -1,0 +1,29 @@
+{
+  "name": "widget",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:tsp": "tsp compile ./spec --config ./spec/tspconfig.yaml",
+    "start": "node ./dist/server/server.js",
+    "build:server": "tsc",
+    "build": "npm run build:tsp && npm run build:server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.14.1",
+    "@types/swagger-ui-express": "^4.1.8"
+  },
+  "dependencies": {
+    "@typespec/ts-http-runtime": "^0.2.1",
+    "express": "^5.1.0",
+    "swagger-ui-express": "^5.0.1",
+    "uri-template": "^2.0.0",
+    "yaml": "^2.7.1"
+  }
+}

@@ -1,0 +1,14 @@
+emit:
+ - "@typespec/openapi3"
+ - "@typespec/http-client-js"
+ - "@typespec/http-server-js" 
+options:
+  "@typespec/openapi3":
+    emitter-output-dir: "{project-root}/../generated/spec/openapi3"
+  "@typespec/http-client-js":
+    emitter-output-dir: "{project-root}/../generated/client"
+    package-name: "@typespec/todo-client"
+  "@typespec/http-server-js":
+    emitter-output-dir: "{project-root}/../generated/server"
+    express: true
+    omit-unreachable-types: true

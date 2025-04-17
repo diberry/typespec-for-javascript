@@ -1,0 +1,39 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/dotnet
+{
+    "name": ".NET 9 Development",
+    // Use the .NET 9 SDK image
+    "image": "mcr.microsoft.com/dotnet/sdk:9.0",
+    
+    // Features to add to the dev container
+    "features": {
+        "ghcr.io/devcontainers/features/azure-cli:1": {},
+        "ghcr.io/azure/azure-dev/azd:0": {},
+        "ghcr.io/devcontainers/features/git:1": {},
+        "ghcr.io/devcontainers/features/github-cli:1": {},
+        "ghcr.io/devcontainers-extra/features/node-asdf:0": {},
+        "ghcr.io/devcontainers-extra/features/typescript:2": {}
+    },
+    
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "typespec.typespec-vscode",
+                "ms-dotnettools.csharp",
+                "ms-dotnettools.vscode-dotnet-runtime",
+                "formulahendry.dotnet-test-explorer",
+                "fernandoescolar.vscode-solution-explorer",
+                "patcx.vscode-nuget-gallery",
+                "humao.rest-client"
+            ]
+        }
+    },
+
+    "postCreateCommand": "npm install -g @typespec/compiler"
+
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    // "forwardPorts": [5000, 5001],
+
+    // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+    // "remoteUser": "root"
+}

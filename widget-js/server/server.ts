@@ -23,7 +23,7 @@ const swaggerDocument = YAML.parse(swaggerSpec)
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-// Add generated route
+// Add generated route controller
 const thisWidgetService = new MyWidgetService();
 const router = createWidgetServiceRouter(thisWidgetService);
 app.use(router.expressMiddleware);

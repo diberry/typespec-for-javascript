@@ -9,10 +9,21 @@ Why is a collection a linked list instead of just an array - can I change that?
 
 ### JS
 
-* why doesn't JS server have a package.json
+* why doesn't JS server have a package.json - on purpose to not create full project - 
+    * scaffolding - http server js package = `npx hsjs-scaffold` - open with vscode, press F5 and it runs
 * how am I supposed to get the npm packages to add to package.json
 * how do I create the WidgetService - https://www.npmjs.com/package/@typespec/http-server-js
-* why aren't all the types exported from the service interface
+* why aren't all the types exported from the service interface - docs for where to get router - scaffolding with set that all up for you 
+
+------------------------------------
+TBD
+------------------------------------
+Verify if openapi is required in package.json
+@typespec/ts-http-runtime
+
+"route controllers"
+
+go figure out scaffolding
 
 ### .NET
 
@@ -21,6 +32,8 @@ Why is a collection a linked list instead of just an array - can I change that?
 * Which version of .NET is supported
 * server doesn't have project file
 * client has project and solution file
+
+* scaffolding - 
 
 ## Document flow (focus on Azure services and their SDK integration instead of Azure hosting)
 

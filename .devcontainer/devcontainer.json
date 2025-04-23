@@ -19,14 +19,12 @@
     "customizations": {
         "vscode": {
             "extensions": [
-                "typespec.typespec-vscode",
-                "ms-dotnettools.csharp",
-                "ms-dotnettools.vscode-dotnet-runtime",
-                "formulahendry.dotnet-test-explorer",
-                "fernandoescolar.vscode-solution-explorer",
-                "patcx.vscode-nuget-gallery",
+                "dbaeumer.vscode-eslint",
                 "humao.rest-client",
-                "ms-azuretools.vscode-bicep"
+                "ms-azuretools.azure-dev",
+                "ms-azuretools.vscode-bicep",
+                "ms-azuretools.vscode-cosmosdb",
+                "typespec.typespec-vscode"
             ]
         }
     },

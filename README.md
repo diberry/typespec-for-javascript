@@ -63,7 +63,7 @@ npm init -y
 2. Install required dependencies:
 
 ```bash
-npm install express swagger-ui-express yaml
+npm install express swagger-ui-express yaml @typespec/compiler
 npm install --save-dev typescript @types/express @types/node @types/swagger-ui-express
 ```
 
@@ -99,33 +99,36 @@ Now, let's define our API with TypeSpec:
 
   ```tsp
   import "@typespec/http";
-  import "@typespec/rest";
 
-  @service(#{
-    title: "Widget Service",
-  })
-  namespace WidgetService;
-
-  using TypeSpec.Http;
-  using TypeSpec.Rest;
+  using Http;
+  @service(#{ title: "Widget Service" })
+  namespace DemoService;
 
   model Widget {
-    @key id: string;
+    @visibility(Lifecycle.Read, Lifecycle.Update)
+    @path
+    id: string;
+
     weight: int32;
     color: "red" | "blue";
   }
 
   @error
-  model WidgetServiceError {
-    @statusCode
-    @minValue(400)
-    @maxValue(599)
+  model Error {
     code: int32;
-
     message: string;
   }
 
-  interface WidgetService extends Resource.ResourceOperations<Widget, WidgetServiceError> {}
+  @route("/widgets")
+  @tag("Widgets")
+  interface Widgets {
+    @get list(): Widget[] | Error;
+    @get read(@path id: string): Widget | Error;
+    @post create(...Widget): Widget | Error;
+    @patch update(...Widget): Widget | Error;
+    @delete delete(@path id: string): void | Error;
+    @route("{id}/analyze") @post analyze(@path id: string): string | Error;
+  }
   ```
 
 3. Create a `spec/tspconfig.yaml` file to configure code generation for the OpenAPI spec, the client library and the API server library:
@@ -133,14 +136,10 @@ Now, let's define our API with TypeSpec:
   ```yaml
   emit:
   - "@typespec/openapi3"
-  - "@typespec/http-client-js"
   - "@typespec/http-server-js" 
   options:
     "@typespec/openapi3":
       emitter-output-dir: "{project-root}/generated/spec/openapi3"
-    "@typespec/http-client-js":
-      emitter-output-dir: "{project-root}/generated/client"
-      package-name: "@typespec/widget-client"
     "@typespec/http-server-js":
       emitter-output-dir: "{project-root}/generated/server"
       express: true
@@ -206,8 +205,8 @@ Create a basic Express.js JavaScript API server.
     const router = createWidgetServiceRouter(thisWidgetService);
     app.use(ROUTE-METHOD);
     
-    app.listen(8080, () => {
-      console.log("Server listening on http://localhost:8080");
+    app.listen(port, () => {
+      console.log("Server listening on http://localhost:port");
     });
     ```
 

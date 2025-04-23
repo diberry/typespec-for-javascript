@@ -13,6 +13,7 @@ COPY . .
 # Build the app
 RUN npm run build
 
+# ---------------------------------------------------------------
 # Production stage
 FROM node:20-alpine
 
@@ -27,7 +28,7 @@ COPY --from=builder /app/package*.json ./
 RUN npm ci --omit=dev
 
 # Set environment variables
-ENV PORT=8080
+ENV PORT=3000
 ENV NODE_ENV=production
 
 # Expose the port

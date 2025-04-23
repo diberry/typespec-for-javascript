@@ -1,6 +1,7 @@
 metadata description = 'Provisions resources for a web application that uses Azure SDK for Node.js to connect to Azure Cosmos DB for NoSQL.'
 
 targetScope = 'resourceGroup'
+param targetPort int = 3000
 
 @minLength(1)
 @maxLength(64)
@@ -144,7 +145,7 @@ module containerAppsTsApp 'br/public:avm/res/app/container-app:0.9.0' = {
     environmentResourceId: containerAppsEnvironment.outputs.resourceId
     location: location
     tags: union(tags, { 'azd-service-name': apiServiceName })
-    ingressTargetPort: 3000
+    ingressTargetPort: targetPort
     ingressExternal: true
     ingressTransport: 'auto'
     stickySessionsAffinity: 'sticky'
@@ -198,6 +199,10 @@ module containerAppsTsApp 'br/public:avm/res/app/container-app:0.9.0' = {
           {
             name: 'AZURE_CLIENT_ID'
             secretRef: 'user-assigned-managed-identity-client-id'
+          }
+          {
+            name: 'PORT'
+            value: '${targetPort}'
           }
         ]
       }

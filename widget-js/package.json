@@ -4,12 +4,13 @@
   "main": "dist/server/server.js",
   "type": "module",
   "scripts": {
+    "clean": "rimraf ./dist && rimraf ./generated",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:tsp": "tsp compile ./spec --config ./spec/tspconfig.yaml",
     "start": "node ./dist/server/server.js",
     "dev": "npm run build && npm run start",
     "build:server": "tsc",
-    "build": "npm run build:tsp && npm run build:server",
+    "build": "npm run clean && npm run build:tsp && npm run build:server",
     "check:versions": "npm outdated"
   },
   "keywords": [],
@@ -22,7 +23,7 @@
     "@types/swagger-ui-express": "^4.1.8",
     "@typespec/compiler": "^1.0.0-0",
     "@typespec/http-client-js": "^0.4.0",
-    "@typespec/http-server-js": "0.58.0-alpha.13",
+    "@typespec/http-server-js": "^0.58.0-alpha.13",
     "@typespec/openapi": "^1.0.0-0",
     "@typespec/openapi3": "^1.0.0-0",
     "typescript": "^5.8.3"
@@ -31,6 +32,7 @@
     "@azure/cosmos": "^4.3.0",
     "@typespec/ts-http-runtime": "^0.2.1",
     "express": "^5.1.0",
+    "rimraf": "^6.0.1",
     "swagger-ui-express": "^5.0.1",
     "uri-template": "^2.0.0",
     "yaml": "^2.7.1"

@@ -15,8 +15,7 @@ param location string
 param deploymentUserPrincipalId string = ''
 
 // serviceName is used as value for the tag (azd-service-name) azd uses to identify deployment host
-param typeScriptServiceName string = 'typescript-web'
-param javaScriptServiceName string = 'javascript-web'
+param apiServiceName string = 'apiserver'
 
 var resourceToken = toLower(uniqueString(resourceGroup().id, environmentName, location))
 var tags = {
@@ -138,13 +137,13 @@ module containerAppsEnvironment 'br/public:avm/res/app/managed-environment:0.8.0
   }
 }
 
-module apiserver 'br/public:avm/res/app/container-app:0.9.0' = {
+module containerAppsTsApp 'br/public:avm/res/app/container-app:0.9.0' = {
   name: 'container-apps-app-ts'
   params: {
     name: 'container-app-ts-${resourceToken}'
     environmentResourceId: containerAppsEnvironment.outputs.resourceId
     location: location
-    tags: union(tags, { 'azd-service-name': typeScriptServiceName })
+    tags: union(tags, { 'azd-service-name': apiServiceName })
     ingressTargetPort: 3000
     ingressExternal: true
     ingressTransport: 'auto'

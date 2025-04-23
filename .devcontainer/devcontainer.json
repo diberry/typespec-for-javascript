@@ -24,7 +24,8 @@
                 "formulahendry.dotnet-test-explorer",
                 "fernandoescolar.vscode-solution-explorer",
                 "patcx.vscode-nuget-gallery",
-                "humao.rest-client"
+                "humao.rest-client",
+                "ms-azuretools.vscode-bicep"
             ]
         }
     },

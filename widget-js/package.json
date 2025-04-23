@@ -1,14 +1,14 @@
 {
   "name": "widget",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/server/server.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:tsp": "tsp compile ./spec --config ./spec/tspconfig.yaml",
     "start": "node ./dist/server/server.js",
+    "dev": "npm run build && npm run start",
     "build:server": "tsc",
-    "prestart": "npm run build",
     "build": "npm run build:tsp && npm run build:server",
     "check:versions": "npm outdated"
   },
@@ -19,15 +19,15 @@
   "devDependencies": {
     "@types/express": "^5.0.1",
     "@types/node": "^22.14.1",
-    "@types/swagger-ui-express": "^4.1.8"
-  },
-  "dependencies": {
-    "@azure/cosmos": "^4.3.0",
+    "@types/swagger-ui-express": "^4.1.8",
     "@typespec/compiler": "^1.0.0-0",
     "@typespec/http-client-js": "^0.4.0",
     "@typespec/http-server-js": "0.58.0-alpha.13",
     "@typespec/openapi": "^1.0.0-0",
-    "@typespec/openapi3": "^1.0.0-0",
+    "@typespec/openapi3": "^1.0.0-0"
+  },
+  "dependencies": {
+    "@azure/cosmos": "^4.3.0",
     "@typespec/ts-http-runtime": "^0.2.1",
     "express": "^5.1.0",
     "swagger-ui-express": "^5.0.1",

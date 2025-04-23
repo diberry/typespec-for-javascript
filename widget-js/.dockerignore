@@ -1,0 +1,36 @@
+# Node.js dependencies
+node_modules
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Build output
+dist
+
+# Development files
+.git
+.github
+.vscode
+*.md
+*.log
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Docker files
+Dockerfile
+.dockerignore
+
+# TypeScript source maps
+*.js.map
+*.d.ts.map
+
+# Test files
+**/*.test.ts
+**/*.spec.ts
+test
+coverage

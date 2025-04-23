@@ -11,7 +11,7 @@ import { dirname } from 'path';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-
+const port = process.env.PORT || 3000;
 const app = express();
 
 // Add generated OPENAPI spec
@@ -28,6 +28,6 @@ const thisWidgetService = new MyWidgetService();
 const router = createWidgetServiceRouter(thisWidgetService);
 app.use(router.expressMiddleware);
 
-app.listen(8080, () => {
-  console.log("Server listening on http://localhost:8080 - api-docs at http://localhost:8080/api-docs");
+app.listen(port, () => {
+  console.log(`Server listening on http://localhost:${port} - api-docs at http://localhost:${port}/api-docs`);
 });

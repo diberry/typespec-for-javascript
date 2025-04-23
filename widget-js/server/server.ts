@@ -29,5 +29,5 @@ const router = createWidgetServiceRouter(thisWidgetService);
 app.use(router.expressMiddleware);
 
 app.listen(8080, () => {
-  console.log("Server listening on http://localhost:8080");
+  console.log("Server listening on http://localhost:8080 - api-docs at http://localhost:8080/api-docs");
 });

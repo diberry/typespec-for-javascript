@@ -5,6 +5,7 @@
 ### Model
 
 How did they choose which methods to add to the service
+Why is a collection a linked list instead of just an array - can I change that?
 
 ### JS
 

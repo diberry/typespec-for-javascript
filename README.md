@@ -162,9 +162,9 @@ Now, let's define our API with TypeSpec:
   ```
 
   This will create:
-  - OpenAPI specifications in `generated/spec/openapi3/`
-  - API server routes (also known as middleware) in `generated/server/`
-  - Client library, to call API server routes, in `generated/client/`
+  - OpenAPI specifications in `generated/spec/openapi3/openapi.yaml`
+  - API server routes (also known as middleware) in `generated/server/`. The key integration file is `generated/server/src/generated/http/router.ts`.
+  - Client library, to call API server routes, in `generated/client/`. The key integration file is `/generated/client/src/widgetServiceClient.ts`.
 
 ## Create API server
 

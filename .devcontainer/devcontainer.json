@@ -12,7 +12,8 @@
         "ghcr.io/devcontainers/features/git:1": {},
         "ghcr.io/devcontainers/features/github-cli:1": {},
         "ghcr.io/devcontainers-extra/features/node-asdf:0": {},
-        "ghcr.io/devcontainers-extra/features/typescript:2": {}
+        "ghcr.io/devcontainers-extra/features/typescript:2": {},
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {}
     },
     
     "customizations": {
@@ -30,10 +31,10 @@
         }
     },
 
-    "postCreateCommand": "npm install -g @typespec/compiler"
+    "postCreateCommand": "npm install -g @typespec/compiler",
 
     // Use 'forwardPorts' to make a list of ports inside the container available locally.
-    // "forwardPorts": [5000, 5001],
+    "forwardPorts": [3000],
 
     // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
     // "remoteUser": "root"

@@ -2,7 +2,7 @@ name: typespec-on-azure-for-javascript-quickstart
 metadata:
   template: typespec-on-azure-for-javascript-quickstart
 services:
-  typescript-web:
+  apiserver:
     project: ./widget-js
     language: ts
     host: containerapp

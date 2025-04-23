@@ -1,4 +1,97 @@
+# Generated files
 **/**/generated*
+**/generated/**
+
+# Node & NPM
 node_modules/
-**/node_modules/
-**/dist/
+**/node_modules/**
+package-lock.json
+**/package-lock.json
+npm-debug.log*
+**/npm-debug.log*
+yarn.lock
+**/yarn.lock
+yarn-debug.log*
+**/yarn-debug.log*
+yarn-error.log*
+**/yarn-error.log*
+.pnp.*
+**/.pnp.*
+.pnpm-store/
+**/.pnpm-store/
+lerna-debug.log*
+**/lerna-debug.log*
+
+# TypeScript
+*.tsbuildinfo
+**/*.tsbuildinfo
+.tsc-output/
+**/.tsc-output/
+*.js.map
+**/*.js.map
+
+# Build outputs
+dist/
+**/dist/**
+build/
+**/build/**
+out/
+**/out/**
+lib/
+**/lib/**
+
+# Coverage directory used by tools like istanbul
+coverage/
+**/coverage/**
+*.lcov
+**/*.lcov
+
+# Dependency directories
+.npm/
+**/.npm/
+.pnpm/
+**/.pnpm/
+.yarn/
+**/.yarn/
+
+# Azure Developer CLI
+.azure
+**/.azure/**
+.azd/
+**/.azd/**
+
+# Local development
+.env
+**/.env
+.env.*
+**/.env.*
+
+# Editor directories and files
+.idea/
+**/.idea/**
+.vscode/*
+**/.vscode/*
+!.vscode/extensions.json
+!**/.vscode/extensions.json
+!.vscode/settings.json
+!**/.vscode/settings.json
+!.vscode/tasks.json
+!**/.vscode/tasks.json
+!.vscode/launch.json
+!**/.vscode/launch.json
+*.suo
+**/*.suo
+*.ntvs*
+**/*.ntvs*
+*.njsproj
+**/*.njsproj
+*.sln
+**/*.sln
+*.sw?
+**/*.sw?
+
+# OS specific
+.DS_Store
+**/.DS_Store
+Thumbs.db
+**/Thumbs.db

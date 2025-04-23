@@ -430,6 +430,10 @@ azd down
 
 Or delete the resource group directly from the Azure portal.
 
+## Troubleshooting
+
+* For any issues with the procedure, create an issue on the [sample code repository](https://github.com/Azure-Samples/REPLACE-THIS/issues)
+
 ## Related articles
 
 - [TypeSpec documentation](https://microsoft.github.io/typespec/)
